@@ -3,8 +3,7 @@ import Home from "../pages/home";
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="*" element={<Navigate to="/" />} />
+    <Route path="/github-search" element={<Home />} />
   </Routes>
 );
 
