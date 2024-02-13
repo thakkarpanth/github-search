@@ -26,7 +26,10 @@ const Home: React.FC = () => {
 
   const debouncedSearch = useDebounce(
     async (query: string, pageNumber: number) => {
-      if (!query) return;
+      if (!query) {
+        setUsers([]);
+        return;
+      }
       setLoading(true);
       const searchUserApiResponse = await gitHubApi.searchUsers(query, pageNumber, perPage);
       const promises = searchUserApiResponse.users.map(user => gitHubApi.getUserDetails(user.login));
@@ -41,7 +44,8 @@ const Home: React.FC = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
-    debouncedSearch(event.target.value, currentPage);
+    setCurrentPage(1);
+    debouncedSearch(event.target.value, 1);
   };
 
   const handlePageChange = (pageNumber: number) => {
