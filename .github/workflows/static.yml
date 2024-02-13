@@ -38,7 +38,7 @@ jobs:
       - name: Install Packages 
         run: npm i
       - name: Build
-        run: npm run build
+        run: PUBLIC_URL="https://thakkarpanth.github.io/github-search" npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
