@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import GitHubApi from "../api/githubApi";
 import UserTable from "../components/userTable";
-import { User, UserData } from "../types/user";
+import { UserData } from "../types/user";
 import { useDebounce } from "../hooks/useDebounce";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 
