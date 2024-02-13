@@ -35,6 +35,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14.19.3
+      - name: Install Packages 
+        run: npm i
       - name: Build
         run: npm run build
       - name: Setup Pages
